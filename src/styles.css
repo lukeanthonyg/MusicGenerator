@@ -1,0 +1,200 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #08141f;
+  color: #f4f7fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html, #app {
+  margin: 0;
+  min-height: 100%;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 1rem;
+  padding: env(safe-area-inset-top) 1rem env(safe-area-inset-bottom);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 22px;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.button, button {
+  border: none;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  background: #204060;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.primary-button {
+  background: #2fa8ff;
+}
+
+.secondary-button {
+  background: #154056;
+}
+
+.prompt-panel,
+.transport-panel,
+.interpretation-panel,
+.track-panel,
+.piano-roll-panel {
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.prompt-input {
+  width: 100%;
+  min-height: 120px;
+  border: none;
+  border-radius: 18px;
+  padding: 1rem;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  resize: vertical;
+}
+
+.prompt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.prompt-suggestions {
+  margin-top: 0.75rem;
+  color: #b0c8e0;
+}
+
+.transport-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.transport-controls,
+.transport-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.transport-button {
+  min-width: 5rem;
+}
+
+.tempo-slider,
+.volume-slider {
+  width: 10rem;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.interpretation-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.track-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.track-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 18px;
+}
+
+.piano-roll {
+  overflow-x: auto;
+  padding: 0.5rem;
+}
+
+.piano-roll-track {
+  position: relative;
+  min-height: 64px;
+  margin-bottom: 1rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 0.75rem;
+}
+
+.piano-roll-track-label {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  color: #cbe5ff;
+  font-size: 0.9rem;
+}
+
+.piano-roll-note {
+  position: absolute;
+  height: 1.5rem;
+  background: rgba(47, 168, 255, 0.85);
+  border-radius: 0.75rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.status-bar {
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 18px;
+}
+
+@media (min-width: 900px) {
+  .workspace {
+    grid-template-columns: minmax(280px, 320px) 1fr;
+  }
+}
